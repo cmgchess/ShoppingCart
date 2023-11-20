@@ -28,21 +28,25 @@ public class Main {
                             String foodName = scanner.next();
                             System.out.print("Enter food price: ");
                             double foodPrice = scanner.nextDouble();
-                            newProduct = new Food(foodName, foodPrice);
+                            System.out.print("Enter food quantity: ");
+                            int foodQuantity = scanner.nextInt();
+                            newProduct = new Food(foodName, foodPrice, foodQuantity);
                             break;
                         case "cloth":
                             System.out.print("Enter cloth name: ");
                             String clothName = scanner.next();
                             System.out.print("Enter cloth price: ");
                             double clothPrice = scanner.nextDouble();
-                            newProduct = new Cloth(clothName, clothPrice);
+                            System.out.print("Enter cloth quantity: ");
+                            int clothQuantity = scanner.nextInt();
+                            newProduct = new Cloth(clothName, clothPrice, clothQuantity);
                             break;
                         default:
                             System.out.println("Invalid product type.");
                             continue;
                     }
                     cart.cartItems.add(newProduct);
-                    System.out.println(newProduct.name + " added to cart!");
+                    System.out.println(newProduct.quantity + " " + newProduct.name + " added to cart!");
                     break;
                 case 2:
                     Product productToRemove = null;

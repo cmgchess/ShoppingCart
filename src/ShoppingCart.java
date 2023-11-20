@@ -16,6 +16,7 @@ public class ShoppingCart {
         //TODO
     }
 
+    //BUG - wrong total
     public double calculateTotalPrice() {
         double total = 0;
         for (Product product: cartItems) {
@@ -27,7 +28,7 @@ public class ShoppingCart {
     public void printCart(){
         System.out.println("Printing Cart Items");
         for (Product product: cartItems) {
-            System.out.println(product.name + ": Rs." + product.price);
+            System.out.println(product.name + " => Price: " + product.price + ", Quantity: " + product.quantity);
         }
     }
 
