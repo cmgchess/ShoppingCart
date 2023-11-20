@@ -14,6 +14,9 @@ public class Main {
         cart.printCart();
         System.out.println("Total price: " + cart.calculateTotalPrice());
 
+        cart.sortCart();
+        cart.printCart();
+
         cart.removeItem(cake);
 
         cart.printCart();

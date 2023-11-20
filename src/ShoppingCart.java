@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Comparator;
 
 public class ShoppingCart {
     private List<Product> cartItems;
@@ -14,6 +15,10 @@ public class ShoppingCart {
 
     public void removeItem(Product product){
         cartItems.remove(product);
+    }
+
+    public void sortCart() {
+        cartItems.sort(Comparator.comparing(cartItem -> cartItem.getName()));
     }
 
     public double calculateTotalPrice() {
