@@ -61,7 +61,7 @@ public class Main {
                         cart.removeItem(productToRemove);
                         System.out.println(productToRemove.getName() + " removed from cart!");
                     } else {
-                        System.out.println(productToRemove.getName() + " not found in cart");
+                        System.out.println(productName + " not found in cart");
                     }
                     break;
                 case 3:
