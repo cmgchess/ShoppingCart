@@ -13,6 +13,10 @@ public class ShoppingCart {
         cartItems.add(product);
     }
 
+    public List<Product> getCartItems() {
+        return cartItems;
+    }
+
     public void removeItem(Product product){
         cartItems.remove(product);
     }

@@ -1,25 +1,86 @@
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
         ShoppingCart cart = new ShoppingCart();
-        Product apple = new Food("Apple", 30.50);
-        Product shirt = new Cloth("Shirt", 1000);
-        Product cake = new Food("Cake", 400);
-        Product denim = new Cloth("Denim", 800);
+        Scanner scanner = new Scanner(System.in);
 
-        cart.addItem(apple);
-        cart.addItem(shirt);
-        cart.addItem(cake);
-        cart.addItem(denim);
+        while (true) {
+            System.out.println("\n===== Shopping Cart CLI =====");
+            System.out.println("1. Add Product");
+            System.out.println("2. Remove Product");
+            System.out.println("3. View Cart");
+            System.out.println("4. Sort Cart Items");
+            System.out.println("5. Calculate Total Price");
+            System.out.println("0. Exit");
+            System.out.print("Enter your choice: ");
 
-        cart.printCart();
-        System.out.println("Total price: " + cart.calculateTotalPrice());
+            int choice = scanner.nextInt();
 
-        cart.sortCart();
-        cart.printCart();
+            switch (choice) {
+                case 1:
+                    System.out.print("Enter product type: (Food, Cloth) ");
+                    String productType = scanner.next();
+                    Product newProduct;
+                    switch (productType.toLowerCase()){
+                        case "food":
+                            System.out.print("Enter food name: ");
+                            String foodName = scanner.next();
+                            System.out.print("Enter food price: ");
+                            double foodPrice = scanner.nextDouble();
+                            newProduct = new Food(foodName, foodPrice);
+                            break;
+                        case "cloth":
+                            System.out.print("Enter cloth name: ");
+                            String clothName = scanner.next();
+                            System.out.print("Enter cloth price: ");
+                            double clothPrice = scanner.nextDouble();
+                            newProduct = new Cloth(clothName, clothPrice);
+                            break;
+                        default:
+                            System.out.println("Invalid product type.");
+                            continue;
+                    }
+                    cart.addItem(newProduct);
+                    System.out.println(newProduct.getName() + " added to cart!");
+                    break;
+                case 2:
+                    Product productToRemove = null;
+                    System.out.print("Enter product type: (Food, Cloth) ");
+                    String productTypeToDelete = scanner.next();
+                    System.out.print("Enter food name to remove: ");
+                    String productName = scanner.next();
+                    for (Product product : cart.getCartItems()) {
+                        String productClass = product.getClass().getName().toLowerCase();
+                        if (product.getName().equals(productName) && productClass.equals(productTypeToDelete.toLowerCase())) {
+                            productToRemove = product;
+                            break;
+                        }
+                    }
+                    if (productToRemove != null){
+                        cart.removeItem(productToRemove);
+                        System.out.println(productToRemove.getName() + " removed from cart!");
+                    } else {
+                        System.out.println(productToRemove.getName() + " not found in cart");
+                    }
+                    break;
+                case 3:
+                    cart.printCart();
+                    break;
+                case 4:
+                    cart.sortCart();
+                    break;
+                case 5:
+                    System.out.println("Total price: " + cart.calculateTotalPrice());
+                    break;
+                case 0:
+                    System.out.println("Exiting the shopping cart CLI.");
+                    System.exit(0);
+                    break;
+                default:
+                    System.out.println("Invalid choice. Please enter a valid option.");
 
-        cart.removeItem(cake);
-
-        cart.printCart();
-        System.out.println("Total price: " + cart.calculateTotalPrice());
+            }
+        }
     }
 }
