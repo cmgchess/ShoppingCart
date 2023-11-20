@@ -1,3 +1,5 @@
+package com.example.shop;
+
 public abstract class Product {
     private String name;
     private double price;

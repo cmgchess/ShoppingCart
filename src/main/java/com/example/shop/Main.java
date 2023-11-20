@@ -1,3 +1,5 @@
+package com.example.shop;
+
 import java.util.Scanner;
 
 public class Main {
