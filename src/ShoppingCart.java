@@ -28,7 +28,7 @@ public class ShoppingCart {
     public double calculateTotalPrice() {
         double total = 0;
         for (Product product: cartItems) {
-            total += product.getPrice();
+            total += product.getPrice() * product.getQuantity();
         }
         return total;
     }
@@ -36,7 +36,7 @@ public class ShoppingCart {
     public void printCart(){
         System.out.println("Printing Cart Items");
         for (Product product: cartItems) {
-            System.out.println(product.getName() + ": Rs." + product.getPrice());
+            System.out.println(product.getName() + " => Price: " + product.getPrice() + ", Quantity: " + product.getQuantity());
         }
     }
 
