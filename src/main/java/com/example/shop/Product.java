@@ -1,6 +1,6 @@
 package com.example.shop;
 
-public class Product {
+public abstract class Product {
     public String name;
     public double price;
     public int quantity;
