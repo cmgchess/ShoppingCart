@@ -19,7 +19,6 @@ public class ShoppingCart {
         //TODO
     }
 
-    //BUG - wrong total
     public double calculateTotalPrice() {
         double total = 0;
         for (Product product: cartItems) {
