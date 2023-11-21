@@ -11,7 +11,7 @@ import java.util.List;
 public class ShoppingCartTest {
 
     @Test
-    public void shouldEncapsulateShoppingCart() {
+    public void testEncapsulateShoppingCart() {
         try {
             Field cartItemsField = ShoppingCart.class.getDeclaredField("cartItems");
             Assertions.assertTrue(Modifier.isPrivate(cartItemsField.getModifiers()), "cartItems should not be directly accessible from outside");
