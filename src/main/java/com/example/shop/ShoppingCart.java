@@ -27,7 +27,7 @@ public class ShoppingCart {
     }
 
     public void sortCart() {
-        //TODO
+        cartItems.sort((item1, item2) -> item1.getName().compareTo(item2.getName()));
     }
 
     public double calculateTotalPrice() {
