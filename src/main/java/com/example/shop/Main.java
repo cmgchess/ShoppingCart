@@ -47,7 +47,7 @@ public class Main {
                             System.out.println("Invalid product type.");
                             continue;
                     }
-                    cart.getCartItems().add(newProduct);
+                    cart.addItem(newProduct);
                     System.out.println(newProduct.getQuantity() + " " + newProduct.getName() + " added to cart!");
                     break;
                 case 2:

@@ -10,6 +10,10 @@ public class ShoppingCart {
         this.cartItems = new ArrayList<Product>();
     }
 
+    public void addItem(Product product) {
+        cartItems.add(product);
+    }
+
     public List<Product> getCartItems() {
         return cartItems;
     }
