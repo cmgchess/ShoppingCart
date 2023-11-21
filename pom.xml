@@ -8,7 +8,7 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <maven.compiler.release>15</maven.compiler.release>
+        <maven.compiler.release>13</maven.compiler.release>
     </properties>
 
     <dependencies>
@@ -28,9 +28,9 @@
                 <version>3.8.1</version>
                 <configuration>
                     <!--Use this only when using Java 9+-->
-<!--                    <release>15</release>-->
-                    <source>1.8</source>
-                    <target>1.8</target>
+                   <release>13</release>
+                    <!-- <source>1.8</source>
+                    <target>1.8</target> -->
 
                 </configuration>
             </plugin>
