@@ -23,7 +23,7 @@ public class ShoppingCart {
     }
 
     public void removeItem(Product product){
-        //TODO
+        cartItems.remove(product);
     }
 
     public void sortCart() {

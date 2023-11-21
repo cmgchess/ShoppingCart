@@ -57,7 +57,11 @@ public class Main {
                     System.out.print("Enter food name to remove: ");
                     String productName = scanner.next();
 
-                    //TODO
+                    for (Product product: cart.getCartItems()){
+                        if (product.getClass().getSimpleName().toLowerCase().equals(productTypeToDelete.toLowerCase()) && productName.toLowerCase().equals(product.getName().toLowerCase())) {
+                            productToRemove = product;
+                        }
+                    }
                     
                     if (productToRemove != null){
                         cart.removeItem(productToRemove);
