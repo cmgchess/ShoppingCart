@@ -47,8 +47,8 @@ public class Main {
                             System.out.println("Invalid product type.");
                             continue;
                     }
-                    cart.cartItems.add(newProduct);
-                    System.out.println(newProduct.quantity + " " + newProduct.name + " added to cart!");
+                    cart.getCartItems().add(newProduct);
+                    System.out.println(newProduct.getQuantity() + " " + newProduct.getName() + " added to cart!");
                     break;
                 case 2:
                     Product productToRemove = null;
@@ -61,7 +61,7 @@ public class Main {
                     
                     if (productToRemove != null){
                         cart.removeItem(productToRemove);
-                        System.out.println(productToRemove.name + " removed from cart!");
+                        System.out.println(productToRemove.getName() + " removed from cart!");
                     } else {
                         System.out.println(productName + " not found in cart");
                     }
