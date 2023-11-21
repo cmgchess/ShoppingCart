@@ -34,7 +34,7 @@ public class ShoppingCartTest {
             cartItems.add(cake);
             Assertions.assertTrue(cartItems.contains(cake), "Item should be added to the cart");
         } catch (NoSuchMethodException | NoSuchFieldException | IllegalAccessException e) {
-            Assertions.fail("addItem method is not implemented");
+            Assertions.fail("Exception occurred while testing: " + e.getMessage());
         }
     }
 
